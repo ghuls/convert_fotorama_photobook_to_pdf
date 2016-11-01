@@ -107,13 +107,13 @@ geometry=$(identify share1.jpg | cut -f 3 -d ' ');
 
 printf '\n\nCreate 1x1 PDF...\n\n';
 
-montage -tile 1x1 -geometry "${geometry}" ${fotorama_pages_1x1} "${fotorama_pdf_realpath_filename%.pdf}.1x1.pdf";
+montage -tile 1x1 -geometry "${geometry}" -compress jpeg ${fotorama_pages_1x1} "${fotorama_pdf_realpath_filename%.pdf}.1x1.pdf";
 
 printf 'The 1x1 fotorama PDF can be found at "%s".\n\n' "${fotorama_pdf_realpath_filename%.pdf}.1x1.pdf";
 
 printf 'Create 2x1 PDF...\n\n';
 
-montage -tile 2x1 -geometry "${geometry}" ${fotorama_pages_2x1} "${fotorama_pdf_realpath_filename%.pdf}.2x1.pdf";
+montage -tile 2x1 -geometry "${geometry}" -compress jpeg ${fotorama_pages_2x1} "${fotorama_pdf_realpath_filename%.pdf}.2x1.pdf";
 
 printf 'The 2x1 fotorama PDF can be found at "%s".\n\n' "${fotorama_pdf_realpath_filename%.pdf}.2x1.pdf";
 
